@@ -1,0 +1,475 @@
+/*index.htmlの全体設定-----------------------------------------------------------------*/
+
+body{
+    overflow-x: hidden; /*横スクロールバーを消す*/
+	padding: 0;
+	margin: 0;
+}
+
+html{
+    height: 100%;
+}
+
+
+/*ヘッダー全体設定---------*/
+.header{
+	display: flex; /*top-hederの子要素を横並びにする*/
+	justify-content: space-between;
+	align-items: center; /*上下中央より*/
+	
+	background-color: white;
+	
+	max-width: 1100px;   /*ヘッダーボックスの横幅 */
+  	margin: 0 auto;     /*画面中央に配置 */
+  	padding: 15px 30px; /*内側余白*/	
+  	border-radius: 0 0 12px 12px; /*下角だけ丸く(左上 → 右上 → 右下 → 左下)*/
+  	box-shadow: 0 4px 10px rgba(0,0,0,0.15); /*影の設定*/
+  	
+  	
+  	/*ヘッダー固定*/
+  	position: sticky;
+	top: 0;
+	z-index: 1000;
+  	
+  	
+  	/*アニメーション*/
+  	animation: slideDown 0.8s ease-out forwards; 
+}
+/*アニメーション定義*/
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header-left{
+	display: flex;
+	gap: 5px;
+}
+
+.header h1, .header h2{
+	margin: 0; /*h1の余白を消す(ヘッダー色とは別の余白が生まれる)*/
+	font-size: 30px;
+}
+
+.header h1{
+	color: #24328e;
+}
+
+.header h2{
+	color: #4ebade;
+}
+
+/*トップナビゲーション*/
+#top-navigation{
+	display: flex;
+	gap: 10px;
+}
+
+/*ボタン全体の設定*/
+.btn{
+	text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    opacity: 0.7; /* 数字が小さいほど透明になる（0.7 = 70%の濃さ） */
+}
+
+/*TOP-口座開設ボタン*/
+#register-btn{ 
+    color: white;
+    background-color: #24328e;
+}
+
+/*TOP-ログインボタン*/
+#login-btn{
+    color: white;
+    background-color: #24328e;
+}
+
+/*【section1】の全体設定*/
+
+/* --- 親要素の調整 --- */
+#section1 {
+    display: flex; 
+    align-items: stretch; /* 左右の高さを揃える */
+}
+
+#hero {
+    background-color: #24328e;
+    min-height: 350px; /* スライダーと高さを合わせる */
+    width: 50%;
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero h1 {
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+
+/*Splide（右側半分）の枠*/
+#main-slider {
+    width: 50%;
+    margin: 50px 0; /* 左のheroとマージンを合わせる */
+    background-color: #ffffff;
+}
+
+/* --- スライドの中身の調整 --- */
+#hero-side1, #hero-side2 {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    justify-content: center;
+    align-items: center;
+}
+
+#hero-side1 h1, #hero-side2 h1 {
+    margin: 0 0 20px 0; /* 下に余白を作る */
+    padding: 0;
+    text-align: center;
+    font-size: 28px;
+}
+
+/* --- ボタンのデザイン --- */
+.sub-navigation-btn {
+    background-color: #24328e;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 24px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sub-navigation-btn:hover {
+    opacity: 0.7;
+}
+
+/* --- ドット（ページネーション）のカスタマイズ --- */
+
+/* 1. 親要素の指定を加えて優先順位を上げる */
+#main-slider .splide__pagination {
+    bottom: 20px; /* 少し上に配置して隠れるのを防ぐ */
+    z-index: 10;
+    padding: 0;   /* 余計な余白をリセット */
+}
+
+/* 2. まだ選択されていないドット */
+#main-slider .splide__pagination__page {
+    background: #cccccc !important; /* !importantで強制的に色を適用 */
+    opacity: 1;
+    width: 12px;
+    height: 12px;
+    margin: 5px;   /* 間隔を少し広げる */
+    border: none;  /* 枠線を消す */
+}
+
+/* 3. 現在表示されているドット（あおい銀行カラー） */
+#main-slider .splide__pagination__page.is-active {
+    background: #24328e !important; /* 紺色を強制適用 */
+    transform: scale(1.4);          /* 1.4倍にして目立たせる */
+}
+
+/*フッターの全体設定*/
+
+footer {
+    background-color: #24328e; /* メインカラーの紺 */
+    color: white;
+    padding: 60px 0 20px 0;
+    margin-top: auto;
+}
+
+#footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* 左右に振り分ける */
+    padding: 0 30px;
+}
+
+.footer-info h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+
+.footer-info p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* リンク同士の間隔 */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* ホバーで下線 */
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* 薄い境界線 */
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/*login.jspの設定--------------------------------------------------------------------*/
+/*ナビゲーションボタンの設定*/
+/*口座開設ボタン*/
+#top-btn{ 
+    color: white;
+    background-color: #24328e;
+}
+
+/*ログイン画面の全体設定*/
+#login-page{
+	text-align: center;
+	margin-top: 100px;
+}
+
+#login-group{
+	margin: 30px 0 0 10px;
+}
+
+#login-group p{
+	font-size: 20px;
+}
+
+#login-input{
+	display: flex;
+	justify-content: center;
+	
+	border-style: solid;
+	border-color: #24328e;
+	
+	background-color: #ffffff;
+    min-height: 300px;
+    width: 400px;
+    margin: 20px auto 20px;
+    
+}
+
+#login-input button{
+	background-color: #24328e;
+	color: white;
+}
+
+/*user_registration.jspの設定--------------------------------------------------------------------*/
+#register-group h1{
+	font-size: 50px;
+    text-align: center;
+    color: #24328e;
+	
+}
+
+#register-group h2{
+	text-align: center;
+}
+
+#regitration-error{
+	text-align: center;
+	color: red;
+}
+
+#register-input{
+	display: flex;
+	justify-content: center;
+}
+
+.phone input {
+    width: 60px;
+}
+
+#register-send-btn{
+	background-color: #24328e;
+	color: white;
+}
+
+/* confirmation.jspの設定--------------------------------------------------------------------*/
+#confirmation-group{
+    text-align: center;
+}
+#confirmation-group h1{
+	font-size: 50px;
+	color: #24328e;
+}
+
+#confirmation-data{
+    text-align: center;
+}
+
+#confirmation-next-btn, #back-btn {
+	background-color: #24328e;
+	color: white;
+}
+
+/* pass_set.jspの設定--------------------------------------------------------------------*/
+#pas-set-btn{
+	background-color: #24328e;
+	color: white;
+}
+
+#pas-set-error{
+	text-align: center;
+	color: red;
+}
+
+/* mypage.jspの設定--------------------------------------------------------------------*/
+/* ハンバーガーメニューの設定 */
+/* メニューのスタイル */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%; /* 初期状態では画面の外に隠れている */
+  width: 200px;
+  height: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  transition: right 0.3s ease; /* スライドインのアニメーション */
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* メニューが開いているとき */
+.menu.open {
+  right: 0;
+}
+
+/* ボタンのスタイル */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #000000;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* バツ印に変化するスタイル */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* メニューリストのスタイル */
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 80px;
+  background-color: #24328e;
+}
+
+.menu li {
+  padding: 20px 0;
+  border-bottom: 1px solid #000000;
+}
+
+.menu li a {
+  color: #000000;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* 顧客名と時間の表示設定　*/
+#welcome-group {
+    width: 80%;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#welcome-group h2 {
+    margin: 0;
+    color: #24328e;
+    font-size: 30px;
+}
+
+.welcome-info{
+    display: flex;
+    gap: 20px;
+    width: 60%;
+    align-items:flex-end;
+}
+
+/* マイページの残高表示カードのスタイル */
+.balance-card {
+    display: flex;
+    justify-content: space-around;
+    background: #ffffff;
+    border-radius: 10px;     /* 角を丸くする */
+    padding: 20px;           /* 内側に余白を作る */
+    margin: 20px;            /* 外側に余白を作る */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 軽い影をつけて立体的に */
+    text-align: center;      /* 文字を中央寄せに */
+}
+
+.account-number span {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;  
+}
+
+.number {
+    font-size: 30px;     
+    font-weight: bold;      
+    color: #0b28e2;;      
+}
+
+.monetary{
+    font-size: 20px;     
+    font-weight: bold;
+}
+
+.mypage-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+

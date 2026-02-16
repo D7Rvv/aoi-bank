@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--スマホ対応-->
+	<title>あおい銀行</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"> <!--Splideライブラリ-->
+	<link rel="stylesheet" href="../css/aoibank.css">
+	
+</head>
+<body>
+	<main>
+		<div class="header">
+			<div class="header-left">
+				<h2>AOI</h2>
+				<h1>あおい銀行</h1>	
+			</div>
+
+			<div id="top-navigation">
+				<a href="../Registration/user_registration.jsp" id="register-btn" class="btn">口座開設</a>
+				<a href="../Login_and_Mypage/login_page.jsp" id="login-btn" class="btn">ログイン</a>
+			</div>
+		</div>
+		
+		<section id="section1">
+			<div id="hero">
+				<h1>あなたの未来を支える、<br>もっとも身近なパートナ</h1>
+			</div>
+			
+			<!--Splide-->
+			<div class="splide" id="main-slider">
+				<div class="splide__track">
+					<ul class="splide__list">
+						<li class="splide__slide">
+							<div id="hero-side1">
+								<h1>アプリで完結、<br>今すぐ口座開設</h1>
+								
+								<div class="sub-navigation">
+									<a href="../Registration/user_registration.jsp" class="sub-navigation-btn">口座開設</a>
+								</div>
+							</div>
+						</li>
+
+						<li class="splide__slide">
+							<div id="hero-side2">
+								<h1>ご利用中の方は、<br>こちらからログイン</h1>
+								
+								<div class="sub-navigation">
+									<a href="../Login_and_Mypage/login_page.jsp" class="sub-navigation-btn">ログイン</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</section>
+
+		<section id="news">
+			<h2>お知らせ</h2>
+			<ul>
+				<li><span class="date">2026.01.18</span> システムメンテナンスのお知らせ</li>
+				<li><span class="date">2026.01.15</span> 新アプリリリースのお知らせ</li>
+			</ul>
+		</section>
+
+		<section id="features">
+			<div class="feature-card">
+				<h3>Security</h3>
+				<p>最新の暗号化技術で、あなたの資産を守ります。</p>
+			</div>
+		</section>
+
+		<footer>
+			<div id="footer-container">
+				<div class="footer-info">
+					<h2>あおい銀行</h2>
+					<p>金融機関コード：0000</p>
+					<p>東京都品川区○○ 1-2-3</p>
+				</div>
+
+				<div class="footer-links">
+					<ul>
+						<li><a href="#">プライバシーポリシー</a></li>
+						<li><a href="#">勧誘方針</a></li>
+						<li><a href="#">ご利用規約</a></li>
+						<li><a href="#">お問い合わせ</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p>&copy; 2026 AOI Bank, Ltd. All Rights Reserved.</p>
+			</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script> <!--Splideライブラリ-->
+		<script src="../js/aoibank.js"></script>
+	</main>
+</body>
