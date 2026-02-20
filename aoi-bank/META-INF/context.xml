@@ -5,7 +5,8 @@
               type="javax.sql.DataSource"
               driverClassName="oracle.jdbc.driver.OracleDriver"
               url="jdbc:oracle:thin:@localhost:1521/ORCLPDB"
-              username="kevin"
-              password="kevin314"
+              username="" 
+              password=""
               maxTotal="20" />
 </Context>
+
